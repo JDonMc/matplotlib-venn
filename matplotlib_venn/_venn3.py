@@ -378,8 +378,8 @@ def venn3(subsets, set_labels=('A', 'B', 'C'), set_colors=('r', 'g', 'b'), alpha
             p.set_edgecolor('none')
             p.set_alpha(alpha)
             ax.add_patch(p)
-    self.label_positions = [r.label_position() for r in regions]
-    subset_labels = [ax.text(lbl[0], lbl[1], s, va='center', ha='center') if lbl is not None else None for (lbl, s) in zip(label_positions, subsets)]
+    label_positions = [r.label_position() for r in regions]
+    subset_labels = [ax.text(lbl[0], lbl[1], s, size='large', va='center', ha='center') if lbl is not None else None for (lbl, s) in zip(label_positions, subsets)]
 
     # Position labels
     if set_labels is not None:
