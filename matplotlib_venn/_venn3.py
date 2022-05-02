@@ -379,8 +379,8 @@ def venn3(subsets, set_labels=('A', 'B', 'C'), set_colors=('r', 'g', 'b'), alpha
             p.set_alpha(alpha)
             ax.add_patch(p)
     label_positions = [r.label_position() for r in regions]
-    subset_labels = [ax.text(lbl[0], lbl[1], s, size='large', va='center', ha='center') if lbl is not None else None for (lbl, s) in zip(label_positions, subsets)]
-
+    subset_labels = [ax.text(lbl[0], lbl[1], s, va='center', ha='center') if lbl is not None else None for (lbl, s) in zip(label_positions, subsets)]
+    subset_labels = subsets
     # Position labels
     if set_labels is not None:
         # There are two situations, when set C is not on the same line with sets A and B, and when the three are on the same line.
